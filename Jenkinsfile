@@ -46,7 +46,7 @@ steps {
 	}
 	}
 
-stage('Create GeoIP.dat) {
+stage('Create GeoIP.dat') {
 steps {
 	sh('mkdir -p $WORKSPACE/build')
 	sh('curl -o $WORKSPACE/build/GeoLite2-Country-CSV.zip -L \
