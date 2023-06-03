@@ -52,8 +52,9 @@ steps {
 	sh('curl -o $WORKSPACE/build/GeoLite2-Country-CSV.zip -L \
 	"https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country-CSV&license_key=${MAXMIND_CREDENTIALS}&suffix=zip"')
 	sh('docker run \
-	--rm=true -i -v \
-	$WORKSPACE/build:/src geolite2legacy:${BUILD_NUMBER} \
+	--rm=true -i \
+	-v $WORKSPACE/build:/src \
+	sparklyballs/geolite2legacy:${BUILD_NUMBER} \
 	-i /src/GeoLite2-Country-CSV.zip -o /src/GeoIP.dat')
 	}
 	}
