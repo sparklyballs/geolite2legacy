@@ -57,11 +57,11 @@ steps {
 	-i /src/GeoLite2-Country-CSV.zip -o /src/GeoIP.dat')
 	}
 	}
-	
+}	
+
 post {
 success {
 archiveArtifacts artifacts: 'build/GeoIP.dat'
 	}
 	}
-}
 }
